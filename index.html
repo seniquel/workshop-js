@@ -7,5 +7,25 @@
 </head>
 <body>
     <h1>Ajouter un utilisateur</h1>
+    <form action="/send_contact" method="post">
+        <table>
+          <tbody>
+            <tr>
+              <td><label for="nom_personne">Nom</label></td>
+              <td><input type="text" name="name" id="nom_personne"></td>
+            </tr>
+            <tr>
+                <td><label for="password">Mot de passe</label></td>
+                <td><input type="text" name="password" id="password"></td>
+              </tr>
+          </tbody>
+        </table>
+        <button type="submit">Ajouter</button>
+      </form>
+      <h1>Liste utilisateurs</h1>
+      <form action="/refresh" method="get">
+        <button type="submit">Rafraichir</button>
+    </form>
+    <script src="index.js">fetchUsers();</script> 
 </body>
 </html>
