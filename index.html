@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="index.js"></script>
+  <title>Index</title>
 </head>
+
 <body>
-    <h1>Ajouter un utilisateur</h1>
-    <form action="/send_contact" method="post">
-        <table>
-          <tbody>
-            <tr>
-              <td><label for="nom_personne">Nom</label></td>
-              <td><input type="text" name="name" id="nom_personne"></td>
-            </tr>
-            <tr>
-                <td><label for="password">Mot de passe</label></td>
-                <td><input type="text" name="password" id="password"></td>
-              </tr>
-          </tbody>
-        </table>
-        <button type="submit">Ajouter</button>
-      </form>
-      <h1>Liste utilisateurs</h1>
-      <form action="/refresh" method="get">
-        <button type="submit">Rafraichir</button>
-    </form>
-    <script src="index.js">fetchUsers();</script> 
+  <h1>Ajouter un utilisateur</h1>
+  <form method="post" id="user_form" onsubmit="return false">
+    <table>
+      <tbody>
+        <tr>
+          <td><label for="nom_personne">Nom</label></td>
+          <td><input type="text" name="name" id="nom_personne"></td>
+        </tr>
+        <tr>
+          <td><label for="password">Mot de passe</label></td>
+          <td><input type="text" name="password" id="password"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="postUser()">Ajouter</button>
+  </form>
+  <h1>Liste utilisateurs</h1>
+    <button onclick="fetchUsers()">Rafraichir</button>
+  <table border="1" style="width:200px">
+    <thead align="center">
+      <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Mot de passe</th>
+      </tr>
+    </thead>
+    <tbody align="center" id="table_users">
+    </tbody>
+  </table>
+
 </body>
+
 </html>
